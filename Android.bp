@@ -12,7 +12,7 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-    name: "audio.primary.pipa",
+    name: "audio.primary.kona",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -20,7 +20,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/hw/audio.primary.pipa.so",
+                "proprietary/vendor/lib/hw/audio.primary.kona.so",
             ],
             shared_libs: [
                 "libbase",
@@ -55,7 +55,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "liba2dpoffload_pipa",
+    name: "liba2dpoffload",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -63,7 +63,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/liba2dpoffload_pipa.so",
+                "proprietary/vendor/lib/liba2dpoffload.so",
             ],
             shared_libs: [
                 "libaudioutils",
@@ -2706,33 +2706,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libI420colorconvert",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libI420colorconvert.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libcutils",
-                "libmm-color-convertor",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libSNPE",
     owner: "xiaomi",
     strip: {
@@ -4066,6 +4039,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -4088,30 +4062,6 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmm-color-convertor",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmm-color-convertor.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
             ],
         },
     },
@@ -4181,30 +4131,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnanopb",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnanopb.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
             ],
         },
     },
@@ -4718,39 +4644,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libsdsprpc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libssccalapi",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libssccalapi.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libqmi_common_so",
-                "libqmi_cci",
-                "libqmi_encdec",
-                "libqmi_csi",
-                "libnanopb",
                 "libc++",
                 "libc",
                 "libm",
